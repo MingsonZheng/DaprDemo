@@ -17,7 +17,7 @@ namespace FrontEnd.Controllers
             _daprClient = daprClient;
         }
 
-        [HttpGet()]
+        [HttpGet]
         public async Task<ActionResult> GetAsync()
         {
             var result = await _daprClient.InvokeMethodAsync<IEnumerable<WeatherForecast>>(HttpMethod.Get, "backend", "WeatherForecast");
